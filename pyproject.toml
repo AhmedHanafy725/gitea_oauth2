@@ -3,7 +3,7 @@ name = "gitea-oauth2"
 version = "0.1.0"
 description = ""
 authors = ["ahmedhanafy725 <hanafya@incubaid.com>"]
-license = "mit"
+license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]

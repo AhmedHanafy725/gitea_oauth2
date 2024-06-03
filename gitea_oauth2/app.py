@@ -54,7 +54,6 @@ def callback(request):
             "code": returned_code,
             "grant_type": "authorization_code",
             "redirect_uri": redirect_uri,
-            "scopes": ["read:organization", "organization"]
         },
     )
 
@@ -75,10 +74,7 @@ def get_repos(request):
     api_instance = giteapy.OrganizationApi(giteapy.ApiClient(configuration))
     try:
         # Create an organization
-        api_response = api_instance.org_list_repos(
-            org="projectmycelium"
-        )
-        print(api_response)
+        api_response = api_instance.org_list_repos(org="projectmycelium")
         repos = []
         for repo in api_response:
             repos.append(repo.full_name)
