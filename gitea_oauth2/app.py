@@ -71,10 +71,12 @@ def get_repos(request):
     configuration.host = urljoin(GITEA_URL, "/api/v1")
     configuration.api_key["token"] = access_token
     # create an instance of the API class
-    api_instance = giteapy.OrganizationApi(giteapy.ApiClient(configuration))
+    api_client = giteapy.ApiClient(configuration)
+    api_instance = giteapy.UserApi(api_client)
     try:
         # Create an organization
-        api_response = api_instance.org_list_repos(org="projectmycelium")
+        api_response = api_instance.user_current_list_repos()
+        print(api_response)
         repos = []
         for repo in api_response:
             repos.append(repo.full_name)
