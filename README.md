@@ -31,7 +31,7 @@ Export the following environment variables:
 
 ```bash
 poetry shell
-python3 gitea_oauth2
+python3 gitea_oauth2/app.py
 ```
 
 ## Endpoints
